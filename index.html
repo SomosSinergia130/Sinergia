@@ -754,7 +754,6 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="#inicio">Inicio</a>
-            <a href="#candidatos">Candidatos</a>
             <a href="#actividades">Actividades</a>
             <a href="#propuestas">Propuestas</a>
             <a href="#sugerencias">Sugerencias</a>
@@ -766,7 +765,7 @@
         <!-- Sección Hero -->
         <section id="inicio" class="hero-section">
             <div class="hero-card">
-                <h2 class="hero-title">¡Juntos Transformamos la Universidad!</h2>
+                <h2 class="hero-title">¡Juntos Transformamos la Preparatoria!</h2>
                 <p class="hero-subtitle">Una planilla comprometida con el bienestar estudiantil, la transparencia y la innovación educativa.</p>
                 
                 <div class="candidatos-grid">
@@ -836,7 +835,7 @@
                 <div class="propuesta-card">
                     <span class="propuesta-icon">💡</span>
                     <h3 class="propuesta-title">Innovación Tecnológica</h3>
-                    <p class="propuesta-text">Modernización de laboratorios, WiFi gratuito en toda la universidad y plataformas digitales mejoradas.</p>
+                    <p class="propuesta-text">Modernización de laboratorios, WiFi gratuito en toda la preparatoria y plataformas digitales mejoradas.</p>
                 </div>
                 
                 <div class="propuesta-card">
@@ -869,12 +868,7 @@
                     <label class="form-label" for="nombre">Nombre (Opcional)</label>
                     <input type="text" id="nombre" class="form-input" placeholder="Tu nombre">
                 </div>
-                
-                <div class="form-group">
-                    <label class="form-label" for="email">Email (Opcional)</label>
-                    <input type="email" id="email" class="form-input" placeholder="tu.email@universidad.edu">
-                </div>
-                
+                               
                 <div class="form-group">
                     <label class="form-label" for="sugerencia">Tu Sugerencia</label>
                     <textarea id="sugerencia" class="form-textarea" placeholder="Comparte tus ideas, propuestas o comentarios..." required></textarea>
@@ -905,11 +899,11 @@
             
             <p class="footer-text">
                 ¡Conecta con nosotros! Mantente informado sobre nuestras actividades, propuestas y eventos. 
-                Tu participación es fundamental para construir una mejor universidad.
+                Tu participación es fundamental para construir una mejor escuela,
             </p>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Unidos Por el Cambio - Planilla Estudiantil | Universidad Tecnológica de Durango</p>
+                <p>&copy; 2024 Unidos Por el Cambio - Planilla Estudiantil | CBTIS #130</p>
             </div>
         </div>
     </footer>
@@ -945,10 +939,8 @@
             // Crear el mensaje para WhatsApp
             const mensaje = `🗳️ *Nueva Sugerencia - Unidos Por el Cambio*\n\n` +
                           `👤 *Nombre:* ${nombre}\n` +
-                          `📧 *Email:* ${email}\n` +
                           `📅 *Fecha:* ${new Date().toLocaleDateString()}\n\n` +
-                          `💭 *Sugerencia:*\n${sugerencia}\n\n` +
-                          `---\n📱 Enviado desde nuestro sitio web`;
+                          `💭 *Sugerencia:*\n${sugerencia}\n\n`;
             
             // Codificar el mensaje para URL
             const mensajeCodificado = encodeURIComponent(mensaje);
