@@ -752,6 +752,7 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="#inicio">Inicio</a>
+            <a href="#candidatos">Candidatos</a>
             <a href="#actividades">Actividades</a>
             <a href="#propuestas">Propuestas</a>
             <a href="#sugerencias">Sugerencias</a>
@@ -763,24 +764,16 @@
         <!-- Sección Hero -->
         <section id="inicio" class="hero-section">
             <div class="hero-card">
-                <h2 class="hero-title">¡Juntos Transformamos la Preparatoria!</h2>
+                <h2 class="hero-title">¡Juntos Transformamos la Universidad!</h2>
                 <p class="hero-subtitle">Una planilla comprometida con el bienestar estudiantil, la transparencia y la innovación educativa.</p>
                 
                 <div class="candidatos-grid">
                     <div class="candidato-card">
                         <div class="candidato-foto">
-    <img src="efren.png" alt="Efrén Fernando" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+    <img src="efren.png" alt="Efrén Meraz" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
 </div>
-                        <h3 class="candidato-nombre">Efrén Fernando</h3>
-                        <span class="candidato-cargo">Proximamente...</span>
-                    </div>
-                    
-                    <div class="candidato-card">
-                        <div class="candidato-foto">
-    <img src="villa.png" alt="Ángel Villa" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
-</div>
-                        <h3 class="candidato-nombre">Ángel Villa</h3>
-                        <span class="candidato-cargo">Proximamente...</span>
+                        <h3 class="candidato-nombre">Efrén Meraz</h3>
+                        <span class="candidato-cargo">Proximamente....</span>
                     </div>
                     
                     <div class="candidato-card">
@@ -788,7 +781,15 @@
     <img src="ashley.png" alt="Ashley" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
 </div>
                         <h3 class="candidato-nombre">Ashley</h3>
-                        <span class="candidato-cargo">Proximamente...</span>
+                        <span class="candidato-cargo">Proximamente....</span>
+                    </div>
+                    
+                    <div class="candidato-card">
+                        <div class="candidato-foto">
+    <img src="villa.png" alt="Ángel Villa" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+</div>
+                        <h3 class="candidato-nombre">Ángel Villa</h3>
+                        <span class="candidato-cargo">Proximamente....</span>
                     </div>
                 </div>
             </div>
@@ -833,7 +834,7 @@
                 <div class="propuesta-card">
                     <span class="propuesta-icon">💡</span>
                     <h3 class="propuesta-title">Innovación Tecnológica</h3>
-                    <p class="propuesta-text">Modernización de laboratorios, WiFi gratuito en toda la escuela y plataformas digitales mejoradas.</p>
+                    <p class="propuesta-text">Modernización de laboratorios, WiFi gratuito en toda la universidad y plataformas digitales mejoradas.</p>
                 </div>
                 
                 <div class="propuesta-card">
@@ -869,12 +870,12 @@
                 
                 <div class="form-group">
                     <label class="form-label" for="email">Email (Opcional)</label>
-                    <input type="email" id="email" class="form-input" placeholder="tu.email@prepa.edu">
+                    <input type="email" id="email" class="form-input" placeholder="tu.email@universidad.edu">
                 </div>
                 
                 <div class="form-group">
                     <label class="form-label" for="sugerencia">Tu Sugerencia</label>
-                    <textarea id="sugerencia" class="form-textarea" placeholder="Comparte tus ideas, propuestas o comentarios..."></textarea>
+                    <textarea id="sugerencia" class="form-textarea" placeholder="Comparte tus ideas, propuestas o comentarios..." required></textarea>
                 </div>
                 
                 <button type="submit" class="submit-btn">Enviar Sugerencia</button>
@@ -902,11 +903,11 @@
             
             <p class="footer-text">
                 ¡Conecta con nosotros! Mantente informado sobre nuestras actividades, propuestas y eventos. 
-                Tu participación es fundamental para construir una mejor escuela.
+                Tu participación es fundamental para construir una mejor universidad.
             </p>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Unidos Por el Cambio - Planilla Estudiantil | CBTIS#130</p>
+                <p>&copy; 2024 Unidos Por el Cambio - Planilla Estudiantil | Universidad Tecnológica de Durango</p>
             </div>
         </div>
     </footer>
@@ -926,11 +927,12 @@
             });
         });
         
-        // Manejo del formulario de sugerencias
+        // Manejo del formulario de sugerencias vía WhatsApp
         document.querySelector('.suggestions-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            const nombre = document.getElementById('nombre').value;
-            const email = document.getElementById('email').value;
+            
+            const nombre = document.getElementById('nombre').value || 'Anónimo';
+            const email = document.getElementById('email').value || 'No proporcionado';
             const sugerencia = document.getElementById('sugerencia').value;
             
             if (sugerencia.trim() === '') {
@@ -938,25 +940,28 @@
                 return;
             }
             
-            // Preparar el correo
-            const subject = encodeURIComponent('Nueva Sugerencia - Unidos Por el Cambio');
-            const body = encodeURIComponent(
-                `Nueva sugerencia recibida:\n\n` +
-                `Nombre: ${nombre || 'Anónimo'}\n` +
-                `Email: ${email || 'No proporcionado'}\n` +
-                `Fecha: ${new Date().toLocaleDateString()}\n\n` +
-                `Sugerencia:\n${sugerencia}\n\n` +
-                `---\nEnviado desde el sitio web de Unidos Por el Cambio`
-            );
+            // Crear el mensaje para WhatsApp
+            const mensaje = `🗳️ *Nueva Sugerencia - Unidos Por el Cambio*\n\n` +
+                          `👤 *Nombre:* ${nombre}\n` +
+                          `📧 *Email:* ${email}\n` +
+                          `📅 *Fecha:* ${new Date().toLocaleDateString()}\n\n` +
+                          `💭 *Sugerencia:*\n${sugerencia}\n\n` +
+                          `---\n📱 Enviado desde nuestro sitio web`;
             
-            // Crear el enlace mailto
-            const mailtoLink = `mailto:somossinergia130@gmail.com?subject=${subject}&body=${body}`;
+            // Codificar el mensaje para URL
+            const mensajeCodificado = encodeURIComponent(mensaje);
             
-            // Abrir el cliente de correo
-            window.location.href = mailtoLink;
+            // REEMPLAZA 5218181234567 por tu número completo con código de país
+            const numeroWhatsApp = '5216182681802'; // Formato: 52 + área + número
+            
+            // Crear enlace de WhatsApp
+            const enlaceWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`;
+            
+            // Abrir WhatsApp
+            window.open(enlaceWhatsApp, '_blank');
             
             // Mostrar mensaje de confirmación
-            alert('¡Gracias por tu sugerencia! Se abrirá tu cliente de correo para enviarla.');
+            alert('¡Gracias! Se abrirá WhatsApp para enviar tu sugerencia.');
             this.reset();
         });
         
