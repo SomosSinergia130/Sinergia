@@ -125,7 +125,6 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            max-height: 1575px;
         }
         
         /* Sección principal */
@@ -231,11 +230,14 @@
         
         /* Carrusel */
         .carousel-section {
-            padding: 40px 0 20px 0;
+            padding: 60px 0;
             background: var(--blanco);
-            margin: 30px 0 15px 0;
+            margin: 40px 0;
             border-radius: 30px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+            clear: both;
         }
         
         .carousel-title {
@@ -285,7 +287,10 @@
         
         /* Propuestas */
         .propuestas-section {
-            padding: 40px 0;
+            padding: 60px 0;
+            position: relative;
+            z-index: 1;
+            clear: both;
         }
         
         .propuestas-title {
@@ -345,6 +350,8 @@
             margin: 50px 0;
             border-radius: 30px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
         }
         
         .suggestions-title {
@@ -419,6 +426,8 @@
             color: var(--blanco);
             padding: 60px 0 30px;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
         
         .footer-title {
@@ -504,12 +513,12 @@
             }
             
             .hero-section {
-                padding: 40px 0;
+                padding: 30px 0;
             }
             
             .hero-card {
                 padding: 30px 20px;
-                margin-bottom: 30px;
+                margin-bottom: 20px;
             }
             
             .hero-title {
@@ -545,9 +554,11 @@
                 font-size: 0.9em;
             }
             
+            /* Carrusel móvil */
             .carousel-section {
-                padding: 30px 0;
-                margin: 20px 0;
+                padding: 40px 0;
+                margin: 30px 0;
+                transform: none !important;
             }
             
             .carousel-title {
@@ -557,6 +568,7 @@
             
             .carousel-container {
                 margin: 0 10px;
+                max-width: 350px;
             }
             
             .carousel-item {
@@ -564,6 +576,12 @@
                 height: 300px;
             }
             
+            /* Propuestas móvil */
+            .propuestas-section {
+                padding: 40px 0;
+                transform: none !important;
+                margin-top: 0;
+            }
             
             .propuestas-title {
                 font-size: 1.8em;
@@ -682,8 +700,18 @@
                 padding: 6px 12px;
             }
             
+            /* Móvil pequeño - carrusel */
+            .carousel-section {
+                padding: 30px 0;
+                margin: 20px 0;
+            }
+            
             .carousel-title, .propuestas-title, .suggestions-title {
                 font-size: 1.5em;
+            }
+            
+            .carousel-container {
+                max-width: 300px;
             }
             
             .carousel-item {
@@ -859,35 +887,31 @@
             </div>
         </section>
 
-                <!-- Carrusel de Actividades -->
+        <!-- Carrusel de Actividades -->
         <section id="actividades" class="carousel-section">
-            <div class="container">
-                <h2 class="carousel-title">Nuestras Actividades Realizadas</h2>
-                <div class="carousel-container">
-                    <div class="carousel">
-                        <div class="carousel-item" style="background-image: url('imagenes/evento1.jpg'); background-size: cover;">
-    <div style="background: rgba(0,0,0,0.6); padding: 20px; border-radius: 10px;">🎓 Eventos Académicos Realizados</div>
-                        </div>
-                        <div class="carousel-item" style="background-image: url('imagenes/evento2.jpg'); background-size: cover;">
-    <div style="background: rgba(0,0,0,0.6); padding: 20px; border-radius: 10px;">🎓 Bienvenida</div>
-                        </div>
-                        <div class="carousel-item" style="background-image: url('imagenes/evento3.jpg'); background-size: cover;">
-    <div style="background: rgba(0,0,0,0.6); padding: 20px; border-radius: 10px;">🎓 Regalos</div>
-                        </div>
-                        <div class="carousel-item" style="background-image: url('imagenes/evento4.jpg'); background-size: cover;">
-    <div style="background: rgba(0,0,0,0.6); padding: 20px; border-radius: 10px;">🎓 Ustedes</div>
-                        </div>
-                        <div class="carousel-item" style="background-image: url('imagenes/evento5.jpg'); background-size: cover;">
-    <div style="background: rgba(0,0,0,0.6); padding: 20px; border-radius: 10px;">🎓 Eventos Académicos Realizados</div>
-                        </div>
+            <h2 class="carousel-title">Nuestras Actividades Realizadas</h2>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-item" style="background-image: url('imagenes/evento1.jpg'); background-size: cover;">
+                        <div style="background: rgba(0,0,0,0.6); padding: 20px; border-radius: 10px;">🎓 Eventos Académicos Realizados</div>
+                    </div>
+                    <div class="carousel-item" style="background-image: url('imagenes/evento2.jpg'); background-size: cover;">
+                        <div style="background: rgba(0,0,0,0.6); padding: 20px; border-radius: 10px;">🎓 Bienvenida</div>
+                    </div>
+                    <div class="carousel-item" style="background-image: url('imagenes/evento3.jpg'); background-size: cover;">
+                        <div style="background: rgba(0,0,0,0.6); padding: 20px; border-radius: 10px;">🎓 Regalos</div>
+                    </div>
+                    <div class="carousel-item" style="background-image: url('imagenes/evento4.jpg'); background-size: cover;">
+                        <div style="background: rgba(0,0,0,0.6); padding: 20px; border-radius: 10px;">🎓 Ustedes</div>
+                    </div>
+                    <div class="carousel-item" style="background-image: url('imagenes/evento5.jpg'); background-size: cover;">
+                        <div style="background: rgba(0,0,0,0.6); padding: 20px; border-radius: 10px;">🎓 Eventos Académicos Realizados</div>
                     </div>
                 </div>
             </div>
         </section>
-    </div>
 
-            <!-- Propuestas -->
-        <div class="container">
+        <!-- Propuestas -->
         <section id="propuestas" class="propuestas-section">
             <h2 class="propuestas-title">Nuestras Propuestas</h2>
             <div class="propuestas-grid">
@@ -928,7 +952,8 @@
                 </div>
             </div>
         </section>
-        </div>
+    </div>
+    
     <!-- Buzón de sugerencias -->
     <section id="sugerencias" class="suggestions-section">
         <div class="container">
@@ -969,7 +994,7 @@
             
             <p class="footer-text">
                 ¡Conecta con nosotros! Mantente informado sobre nuestras actividades, propuestas y eventos. 
-                Tu participación es fundamental para construir una mejor escuela,
+                Tu participación es fundamental para construir una mejor escuela.
             </p>
             
             <div class="footer-bottom">
@@ -1036,17 +1061,19 @@
             this.reset();
         });
         
-        // Efecto parallax ligero en el scroll
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.hero-card, .carousel-section');
-            
-            parallaxElements.forEach(element => {
-                const speed = 0.5;
-                const yPos = -(scrolled * speed);
-                element.style.transform = `translateY(${yPos}px)`;
+        // Desactivar efecto parallax en móviles para evitar problemas de superposición
+        if (window.innerWidth > 768) {
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const parallaxElements = document.querySelectorAll('.hero-card');
+                
+                parallaxElements.forEach(element => {
+                    const speed = 0.3;
+                    const yPos = -(scrolled * speed);
+                    element.style.transform = `translateY(${yPos}px)`;
+                });
             });
-        });
+        }
     </script>
 </body>
 </html>
