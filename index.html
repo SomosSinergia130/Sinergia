@@ -259,7 +259,7 @@
         
         .carousel {
             display: flex;
-            animation: slide 15s infinite;
+            animation: slide 30s infinite;
         }
         
         .carousel-item {
@@ -279,10 +279,72 @@
         }
         
         @keyframes slide {
-            0%, 30% { transform: translateX(0); }
-            33%, 63% { transform: translateX(-100%); }
-            66%, 96% { transform: translateX(-200%); }
-            100% { transform: translateX(0); }
+            0%, 9% { transform: translateX(0); }
+            10%, 19% { transform: translateX(-100%); }
+            20%, 29% { transform: translateX(-200%); }
+            30%, 39% { transform: translateX(-300%); }
+            40%, 49% { transform: translateX(-400%); }
+            50%, 59% { transform: translateX(-500%); }
+            60%, 69% { transform: translateX(-600%); }
+            70%, 79% { transform: translateX(-700%); }
+            80%, 89% { transform: translateX(-800%); }
+            90%, 100% { transform: translateX(-900%); }
+        }
+        
+        /* Croquis */
+        .croquis-section {
+            padding: 60px 0;
+            background: var(--blanco);
+            margin: 50px 0;
+            border-radius: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .croquis-title {
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--rosa-principal);
+            margin-bottom: 50px;
+        }
+        
+        .croquis-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .croquis-image-wrapper {
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .croquis-image {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        
+        .croquis-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .croquis-description {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .croquis-description p {
+            font-size: 1.2em;
+            color: var(--gris-texto);
+            line-height: 1.6;
+            margin: 0;
         }
         
         /* Propuestas */
@@ -592,6 +654,30 @@
                 height: 300px;
             }
             
+            /* Croquis móvil */
+            .croquis-section {
+                padding: 40px 0;
+                margin: 30px 0;
+            }
+            
+            .croquis-title {
+                font-size: 1.8em;
+                margin-bottom: 30px;
+            }
+            
+            .croquis-container {
+                padding: 0 10px;
+            }
+            
+            .croquis-image-wrapper {
+                margin-bottom: 20px;
+            }
+            
+            .croquis-description p {
+                font-size: 1em;
+                padding: 0 10px;
+            }
+            
             /* Propuestas móvil */
             .propuestas-section {
                 padding: 40px 0;
@@ -722,6 +808,19 @@
                 margin: 20px 0;
             }
             
+            .croquis-section {
+                padding: 30px 0;
+                margin: 20px 0;
+            }
+            
+            .croquis-title {
+                font-size: 1.5em;
+            }
+            
+            .croquis-description p {
+                font-size: 0.9em;
+            }
+            
             .carousel-title, .propuestas-title, .suggestions-title {
                 font-size: 1.5em;
             }
@@ -790,7 +889,8 @@
             <a href="#top">Inicio</a>
             <a href="#inicio">Equipo</a>
             <a href="#actividades">Actividades</a>
-            <a href="#propuestas">Propuestas</a>
+            <a href="#croquis">Croquis</a>
+            <a href="#propuestas">Enfoques</a>
             <a href="#sugerencias">Sugerencias</a>
             <a href="#contacto">Contacto</a>
         </div>
@@ -853,7 +953,7 @@
                     </div>
 
                     <div class="candidato-card">
-                        <div class="candidato-foto" data-instagram="sebastian_nevarez" onclick="abrirInstagram(this)">
+                        <div class="candidato-foto" data-instagram="somossinergiaa_" onclick="abrirInstagram(this)">
                             <img src="imagenes/sebastian.png" alt="Sebastián Nevárez" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
                         </div>
                         <h3 class="candidato-nombre">Sebastián Nevárez</h3>
@@ -885,7 +985,7 @@
                     </div>
 
                     <div class="candidato-card">
-                        <div class="candidato-foto" data-instagram="andrea_prado" onclick="abrirInstagram(this)">
+                        <div class="candidato-foto" data-instagram="somossinergiaa_" onclick="abrirInstagram(this)">
                             <img src="imagenes/andrea.png" alt="Andrea Prado" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
                         </div>
                         <h3 class="candidato-nombre">Andrea Prado</h3>
@@ -902,7 +1002,7 @@
 
                     <div class="candidato-card">
                         <div class="candidato-foto" data-instagram="jonathanmontess_" onclick="abrirInstagram(this)">
-                            <img src="imagenes/jonhatan.png" alt="Jonathan Montes" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;" align="center">
+                            <img src="imagenes/jonhatan.png" alt="Jonathan Montes" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
                         </div>
                         <h3 class="candidato-nombre">Jonathan Montes</h3>
                         <span class="candidato-cargo">Proximamente....</span>
@@ -918,12 +1018,12 @@
             <div class="carousel-container">
                 <div class="carousel">
                     <div class="carousel-item" style="background-image: url('imagenes/evento1.jpg'); background-size: cover;"></div>
-                    <div class="carousel-item" style="background-image: url('imagenes/evento2.jpg'); background-size: cover;"> </div>
+                    <div class="carousel-item" style="background-image: url('imagenes/evento2.jpg'); background-size: cover;"></div>
                     <div class="carousel-item" style="background-image: url('imagenes/evento3.jpg'); background-size: cover;"></div>
                     <div class="carousel-item" style="background-image: url('imagenes/evento4.jpg'); background-size: cover;"></div>
                     <div class="carousel-item" style="background-image: url('imagenes/evento5.jpg'); background-size: cover;"></div>
                     <div class="carousel-item" style="background-image: url('imagenes/evento6.jpg'); background-size: cover;"></div>
-                    <div class="carousel-item" style="background-image: url('imagenes/evento7.jpg'); background-size: cover;"> </div>
+                    <div class="carousel-item" style="background-image: url('imagenes/evento7.jpg'); background-size: cover;"></div>
                     <div class="carousel-item" style="background-image: url('imagenes/evento8.jpg'); background-size: cover;"></div>
                     <div class="carousel-item" style="background-image: url('imagenes/evento9.jpg'); background-size: cover;"></div>
                     <div class="carousel-item" style="background-image: url('imagenes/evento10.jpg'); background-size: cover;"></div>
@@ -931,9 +1031,22 @@
             </div>
         </section>
 
-        <!-- Propuestas -->
+        <!-- Sección Croquis -->
+        <section id="croquis" class="croquis-section">
+            <h2 class="croquis-title">Croquis</h2>
+            <div class="croquis-container">
+                <div class="croquis-image-wrapper">
+                    <img src="imagenes/croquis.jpg" alt="Croquis del campus" class="croquis-image">
+                </div>
+                <div class="croquis-description">
+                    <p>Conoce la distribución de nuestro campus y ubica fácilmente todas las áreas importantes de la institución.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enfoques -->
         <section id="propuestas" class="propuestas-section">
-            <h2 class="propuestas-title">Nuestras Propuestas</h2>
+            <h2 class="propuestas-title">Nuestros Enfoques</h2>
             <div class="propuestas-grid">
                 <div class="propuesta-card">
                     <span class="propuesta-icon">📚</span>
